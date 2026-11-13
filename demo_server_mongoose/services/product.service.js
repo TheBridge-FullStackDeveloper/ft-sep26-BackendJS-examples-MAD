@@ -32,10 +32,10 @@ const getProduct = async (id = "") => {
     let products = id?
                     await Product
                             .find({ id }, '-_id -__v')
-                            // .populate('provider','-_id -__v') 
+                            .populate('provider','-_id -__v') 
                     : await Product
                             .find({}, '-_id -__v')
-                            // .populate('provider','-_id -__v'); //{}
+                            .populate('provider','-_id -__v'); //{}
 
     return products;
 }
