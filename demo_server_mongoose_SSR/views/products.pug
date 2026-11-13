@@ -11,6 +11,37 @@ html(lang="en")
         include ./header.pug
 
         main
+
+            h1 Crear producto nuevo 
+
+            form#productForm
+                label(for="id") ID:
+                br
+                input#id(type="number" name="id")
+                br
+                label(for="title") Título (title):
+                br
+                input#title(type="text" name="title")
+                br
+                label(for="price") Precio (price):
+                br
+                input#price(type="number" name="price" step="0.01")
+                br
+                label(for="description") Descripción (description) *:
+                br
+                textarea#description(name="description" rows="4" required) 
+                br
+                label(for="image") URL de la Imagen (image):
+                br
+                input#image(type="url" name="image")
+                br
+                label(for="companyName") Nombre de la Empresa (companyName):
+                br
+                select#companyName(name="companyName")
+                    option(value="La casa de las flores") La casa de las flores
+                    option(value="La casa de las plantas") La casa de las plantas
+                br
+                button(type="submit") Enviar Datos
             
             h1 Buscador
             input#productName(type="text")
